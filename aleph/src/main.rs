@@ -1,17 +1,21 @@
-mod argparse;
+mod lang;
 
 use std::env::args;
-use argparse::test;
 
 fn main() {
     let args: Vec<String> = args().collect();
+    if args.len() < 2 {
+        lang::print_help_menu();
+        return;
+    }
     match args[1].as_str() {
         "help" | "--help" => {
-            println!("HELP MENU HERE");
-            test();
+            lang::print_help_menu();
+            return;
         },
         a => {
-            eprintln!("Error - Invalid argument {}!", a);
+            lang::print_invalid_arg(a);
+            lang::print_help_menu();
             return;
         }
     }

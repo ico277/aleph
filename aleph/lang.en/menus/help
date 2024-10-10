@@ -1,0 +1,20 @@
+Aleph Package Manager
+---------------------
+Usage:
+    %CMD% <subcommand> [options]
+
+Subcommands:
+    help, --help                              Shows this help message and exits.
+    version, --version                        Shows version information.
+    install, i <package1 package2 ...>        Installs the specified packages.
+    remove, rm <package1 package2 ...>        Removes the specified packages.
+    search, s <searchterm>                    Searches through the package database for *searchterm* (supports regex).
+    list, l                                   Lists all packages inside the package database.
+
+Examples:
+    ./aleph install example-package1 example-package2
+    ./aleph remove example-package1
+    ./aleph search libexample
+    ./aleph list
+
+For detailed documentation, visit: <https://github.com/ico277/aleph>
