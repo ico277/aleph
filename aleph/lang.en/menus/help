@@ -4,17 +4,30 @@ Usage:
     %CMD% <subcommand> [options]
 
 Subcommands:
-    help, --help                              Shows this help message and exits.
-    version, --version                        Shows version information.
-    install, i <package1 package2 ...>        Installs the specified packages.
-    remove, rm <package1 package2 ...>        Removes the specified packages.
-    search, s <searchterm>                    Searches through the package database for *searchterm* (supports regex).
-    list, l                                   Lists all packages inside the package database.
+    help, --help                                            Shows this help message and exits.
+    version, --version, -v, -?                              Shows version information.
+    install, add [--pretend] <package1 package2 ...>        Installs the specified packages.
+                                                            --pretend disables filesystem actions.
+    uninstall, remove [--pretend,--purge] <package1 package2 ...>     Removes the specified packages.
+                                                            --purge removes all cached package files
+    query [--desc,--regex] <term>                           Searches through all installed packages.
+                                                            --desc outputs the package description.
+                                                            --regex enables regex support.
+    search [--desc,--regex] <term>                          Searches through all packages from
+                                                            all available repositories using the
+                                                            local database.
+                                                            --desc outputs the package description.
+                                                            --regex enables regex support.
+    files <package>                                         List files of a package.
+    list [--repo]                                           Lists all installed packages.
+                                                            --repo lists all packages from
+                                                                   all available repositories
+                                                                   using the local database.
 
 Examples:
     ./aleph install example-package1 example-package2
-    ./aleph remove example-package1
-    ./aleph search libexample
+    ./aleph remove --purge example-package1
+    ./aleph search --regex example.*?
     ./aleph list
 
 For detailed documentation, visit: <https://github.com/ico277/aleph>
