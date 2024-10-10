@@ -1,4 +1,4 @@
-# Aleph Null Package specifcation v1
+# Aleph Null Package Specfication v1
 ```
 file format: .tar.zst
 file extension: .null
@@ -18,7 +18,7 @@ tree:
 └── NULLPRE  (OPTIONAL) -> Pre-install script   
 ```
 
-# Null Package info v1
+# Null Package Info v1
 ```
 format: TOML
 example:
